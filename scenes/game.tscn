@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://bj2m8msud6vao"]
+[gd_scene load_steps=8 format=4 uid="uid://bj2m8msud6vao"]
 
 [ext_resource type="Texture2D" uid="uid://lbcq8mqgj6ge" path="res://assets/towerDefense_tilesheet.png" id="1_r0j0p"]
 [ext_resource type="Script" path="res://scenes/player_camera.gd" id="2_abcab"]
+[ext_resource type="PackedScene" uid="uid://bgflrsx5rm8kk" path="res://scenes/tower.tscn" id="3_p8s4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhl67"]
 texture = ExtResource("1_r0j0p")
@@ -634,3 +635,8 @@ position = Vector2(407, 804)
 zoom = Vector2(0.747, 0.88)
 script = ExtResource("2_abcab")
 pan_speed = 700.0
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Tower" parent="Towers" instance=ExtResource("3_p8s4w")]
+position = Vector2(449, 607)
