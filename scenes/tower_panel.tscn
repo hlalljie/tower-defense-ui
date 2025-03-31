@@ -13,3 +13,5 @@ script = ExtResource("1_luivr")
 position = Vector2(40, 40)
 scale = Vector2(1.159, 1.159)
 texture = ExtResource("2_psyxb")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -631,8 +631,8 @@ tile_map_data = PackedByteArray("AAACAAIAAAATAAcAAAAAAAIAAAATAAcAAAABAAIAAAARAAg
 tile_set = SubResource("TileSet_c848l")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2(407, 804)
-zoom = Vector2(0.747, 0.88)
+position = Vector2(367, 782)
+zoom = Vector2(1.06, 1.06)
 script = ExtResource("2_abcab")
 pan_speed = 700.0
 
