@@ -1,7 +1,9 @@
 extends Panel
 
 @onready var tower = preload("res://scenes/tower.tscn")
+@onready var camera = get_tree().get_root().get_node("Game/PlayerCamera") # get camera for movement adjsutment
 
+var currentTile
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,6 +30,16 @@ func _on_gui_input(event: InputEvent) -> void:
 		#print("Left button drag")
 		if get_child_count() > 1:
 			get_child(1).global_position = event.global_position # follow mouse
+			
+			var map = get_tree().get_root().get_node("Game/Map/Ground")
+			var tile = map.local_to_map(map.to_local(get_global_mouse_position()))
+			currentTile = map.get_cell_atlas_coords(tile)
+			
+			if (currentTile == Vector2i(4, 5)):
+				get_child(1).get_node("Area").modulate = Color(0, 255, 0)
+			else:
+				get_child(1).get_node("Area").modulate = Color(255, 255, 255)
+			
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		# Left button up
 		#print("Left button up")
@@ -43,7 +55,6 @@ func _on_gui_input(event: InputEvent) -> void:
 		var path = get_tree().get_root().get_node("Game/Towers")
 		path.add_child(tempTower)
 		
-		var camera = get_tree().get_root().get_node("Game/PlayerCamera") # get camera for movement adjsutment
 		tempTower.global_position = camera.get_global_mouse_position()
 		
 		tempTower.get_node("Area").hide()

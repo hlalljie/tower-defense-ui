@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c3osu4d52m7ne" path="res://assets/tower2.png" id="1_ymh3s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6p34q"]
-bg_color = Color(1, 0, 0, 1)
+bg_color = Color(1, 0, 0, 0.466667)
 corner_radius_top_left = 450
 corner_radius_top_right = 450
 corner_radius_bottom_right = 450
