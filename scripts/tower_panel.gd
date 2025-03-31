@@ -30,10 +30,15 @@ func _on_gui_input(event: InputEvent) -> void:
 			get_child(1).global_position = event.global_position # follow mouse
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		# Left button up
-		print("Left button up")
+		#print("Left button up")
+		
 		if get_child_count() > 1:
 			get_child(1).queue_free() # delete ui tower
-		
+			
+		# Delete towers when droped in the ui panel (200 is the size of my panel)
+		if event.global_position.x <= 200:
+			return
+
 		# create tower in the main game Towers node
 		var path = get_tree().get_root().get_node("Game/Towers")
 		path.add_child(tempTower)
