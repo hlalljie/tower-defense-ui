@@ -26,11 +26,13 @@ func _on_gui_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and event.button_mask == 1:
 		# Left click down and drag
 		#print("Left button drag")
-		get_child(1).global_position = event.global_position # follow mouse
+		if get_child_count() > 1:
+			get_child(1).global_position = event.global_position # follow mouse
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		# Left button up
 		print("Left button up")
-		get_child(1).queue_free() # delete ui tower
+		if get_child_count() > 1:
+			get_child(1).queue_free() # delete ui tower
 		
 		# create tower in the main game Towers node
 		var path = get_tree().get_root().get_node("Game/Towers")
@@ -40,5 +42,9 @@ func _on_gui_input(event: InputEvent) -> void:
 		tempTower.global_position = camera.get_global_mouse_position()
 		
 		tempTower.get_node("Area").hide()
+	# Hotfix for right click more than one tower bug
+	else:
+		if get_child_count() > 1:
+			get_child(1).queue_free()
 	
 	
