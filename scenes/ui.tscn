@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bmt4coapc1gta"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 200.0
+offset_bottom = 648.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 182.0
+offset_bottom = 624.0
