@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://bj2m8msud6vao"]
 
 [ext_resource type="Texture2D" uid="uid://lbcq8mqgj6ge" path="res://assets/towerDefense_tilesheet.png" id="1_r0j0p"]
-[ext_resource type="Script" path="res://scenes/player_camera.gd" id="2_abcab"]
+[ext_resource type="Script" path="res://scripts/player_camera.gd" id="2_abcab"]
 [ext_resource type="PackedScene" uid="uid://bmt4coapc1gta" path="res://scenes/ui.tscn" id="4_2tb1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhl67"]
